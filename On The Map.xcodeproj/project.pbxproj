@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		802B1179261921F800742CFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B1178261921F800742CFC /* AppDelegate.swift */; };
 		802B117B261921F800742CFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B117A261921F800742CFC /* SceneDelegate.swift */; };
-		802B117D261921F800742CFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B117C261921F800742CFC /* ViewController.swift */; };
+		802B117D261921F800742CFC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B117C261921F800742CFC /* MapViewController.swift */; };
 		802B1180261921F800742CFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802B117E261921F800742CFC /* Main.storyboard */; };
 		802B1183261921F800742CFC /* On_The_Map.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 802B1181261921F800742CFC /* On_The_Map.xcdatamodeld */; };
 		802B1185261921FA00742CFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 802B1184261921FA00742CFC /* Assets.xcassets */; };
@@ -42,7 +42,7 @@
 		802B1175261921F800742CFC /* On The Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On The Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		802B1178261921F800742CFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		802B117A261921F800742CFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		802B117C261921F800742CFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		802B117C261921F800742CFC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		802B117F261921F800742CFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		802B1182261921F800742CFC /* On_The_Map.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = On_The_Map.xcdatamodel; sourceTree = "<group>"; };
 		802B1184261921FA00742CFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 		802B11B52619230B00742CFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				802B117C261921F800742CFC /* ViewController.swift */,
+				802B117C261921F800742CFC /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */,
-				802B117D261921F800742CFC /* ViewController.swift in Sources */,
+				802B117D261921F800742CFC /* MapViewController.swift in Sources */,
 				8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */,
 				802B1183261921F800742CFC /* On_The_Map.xcdatamodeld in Sources */,
 				8077ED86261A7F17006D7C25 /* OTMClient.swift in Sources */,

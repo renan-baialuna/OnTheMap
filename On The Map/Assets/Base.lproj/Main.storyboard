@@ -27,18 +27,32 @@
         <!--Map-->
         <scene sceneID="1Ax-Xi-8tE">
             <objects>
-                <viewController id="R70-BN-ZzA" sceneMemberID="viewController">
+                <viewController id="R70-BN-ZzA" customClass="MapViewController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CIG-cd-iw2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-gs-k9H">
+                                <rect key="frame" x="20" y="64" width="374" height="729"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RYz-MZ-SAx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oL0-gs-k9H" firstAttribute="top" secondItem="RYz-MZ-SAx" secondAttribute="top" constant="20" id="ad2-Zx-y4s"/>
+                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="bottom" secondItem="oL0-gs-k9H" secondAttribute="bottom" constant="20" id="lIo-EK-j46"/>
+                            <constraint firstItem="oL0-gs-k9H" firstAttribute="leading" secondItem="RYz-MZ-SAx" secondAttribute="leading" constant="20" id="vFG-Ea-joM"/>
+                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="trailing" secondItem="oL0-gs-k9H" secondAttribute="trailing" constant="20" id="zyG-Wd-cwP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ave-Z2-zuX"/>
+                    <connections>
+                        <outlet property="map" destination="oL0-gs-k9H" id="GHd-25-m2Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whh-gb-xlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1555" y="-188"/>
+            <point key="canvasLocation" x="1553.6231884057972" y="-188.16964285714286"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TlD-g8-z08">
