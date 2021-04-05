@@ -13,13 +13,17 @@ class MapViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     
     var annotations = [MKPointAnnotation]()
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        
+        
+        
         // Do any additional setup after loading the view.
         OTMClient.getStudentsLocations { (students, error) in
+            self.appDelegate.students = students
             for student in students {
                 let annotation = self.studentConverter(student: student)
                 self.annotations.append(annotation)
@@ -51,7 +55,7 @@ extension MapViewController: MKMapViewDelegate {
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView!.pinColor = .red
+            pinView!.pinTintColor = .red
             pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         else {
