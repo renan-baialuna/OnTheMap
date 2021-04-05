@@ -46,6 +46,47 @@ class OTMClient {
          return task
     }
     
+    class func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.addValue("application/json", forHTTPHeaderField: "Content-type")
+        request.httpBody = try! JSONEncoder().encode(body)
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let responseObject = try decoder.decode(ResponseType.self, from: data)
+//                Auth.requestToken = responseObject.requestToken
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            } catch {
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let errorResponse = try decoder.decode(TMDBResponse.self, from: data)
+//                    DispatchQueue.main.async {
+//                        completion(nil, errorResponse)
+//                    }
+//                } catch {
+//                    DispatchQueue.main.async {
+//                        completion(nil, error)
+//                    }
+//                }
+            }
+        }
+        task.resume()
+        return task
+        
+    }
+    
+    
+    
     
     class func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {
         taskForGetRequest(url: Endpoints.getStudentsLocation.url, responseType: StudentsResults.self) { (response, error) in

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Lo-2t-a0X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hWE-Ec-9lc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8HB-2L-CBx">
-                                <rect key="frame" x="20" y="64" width="374" height="729"/>
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="75" id="ZRy-12-tJc" customClass="StudentTableViewCell" customModule="On_The_Map" customModuleProvider="target">
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-gs-k9H">
-                                <rect key="frame" x="20" y="64" width="374" height="729"/>
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RYz-MZ-SAx"/>
@@ -103,23 +103,53 @@
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="-188.16964285714286"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fko-EC-1gh">
+            <objects>
+                <navigationController id="hWE-Ec-9lc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="haS-KV-kW6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3Lo-2t-a0X" kind="relationship" relationship="rootViewController" id="TrQ-ef-nL6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHQ-hH-Mea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-732" y="148"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TlD-g8-z08">
             <objects>
-                <tabBarController id="3Lo-2t-a0X" sceneMemberID="viewController">
+                <tabBarController id="3Lo-2t-a0X" customClass="TabBarController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="jVb-aJ-Q3l">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_pin" id="D25-0w-0u4">
+                            <connections>
+                                <action selector="mapButtonPressed:" destination="3Lo-2t-a0X" id="Q2w-Gi-p1S"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_refresh" id="U2P-3H-6qX">
+                            <connections>
+                                <action selector="refreshButtonPressed:" destination="3Lo-2t-a0X" id="HPZ-LL-PKn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1gy-dQ-F7B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="mapButton" destination="D25-0w-0u4" id="LU3-nN-ux7"/>
+                        <outlet property="refreshButton" destination="U2P-3H-6qX" id="84M-Mz-PWm"/>
                         <segue destination="R70-BN-ZzA" kind="relationship" relationship="viewControllers" id="uiy-tr-mxT"/>
                         <segue destination="ugF-Ie-JSU" kind="relationship" relationship="viewControllers" id="tQV-Ab-5kJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i3K-ZP-XgT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="115"/>
+            <point key="canvasLocation" x="175" y="148"/>
         </scene>
     </scenes>
     <resources>
@@ -127,6 +157,8 @@
         <image name="icon_listview-selected" width="75" height="50"/>
         <image name="icon_mapview-deselected" width="75" height="50"/>
         <image name="icon_mapview-selected" width="75" height="50"/>
+        <image name="icon_pin" width="24" height="24"/>
+        <image name="icon_refresh" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
