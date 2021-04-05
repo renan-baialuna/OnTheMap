@@ -16,6 +16,9 @@
 		802B1188261921FA00742CFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802B1186261921FA00742CFC /* LaunchScreen.storyboard */; };
 		802B1193261921FA00742CFC /* On_The_MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B1192261921FA00742CFC /* On_The_MapTests.swift */; };
 		802B119E261921FA00742CFC /* On_The_MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802B119D261921FA00742CFC /* On_The_MapUITests.swift */; };
+		8077ED86261A7F17006D7C25 /* OTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED85261A7F17006D7C25 /* OTMClient.swift */; };
+		8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8A261A80AB006D7C25 /* StudentLocation.swift */; };
+		8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8F261A8440006D7C25 /* StudentsResults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		802B1199261921FA00742CFC /* On The MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "On The MapUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		802B119D261921FA00742CFC /* On_The_MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = On_The_MapUITests.swift; sourceTree = "<group>"; };
 		802B119F261921FA00742CFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8077ED85261A7F17006D7C25 /* OTMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMClient.swift; sourceTree = "<group>"; };
+		8077ED8A261A80AB006D7C25 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		8077ED8F261A8440006D7C25 /* StudentsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsResults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +107,12 @@
 		802B1177261921F800742CFC /* On The Map */ = {
 			isa = PBXGroup;
 			children = (
+				802B11B52619230B00742CFC /* Controller */,
+				802B11B42619230500742CFC /* View */,
+				802B11B3261922F200742CFC /* Model */,
 				802B1178261921F800742CFC /* AppDelegate.swift */,
 				802B117A261921F800742CFC /* SceneDelegate.swift */,
-				802B117C261921F800742CFC /* ViewController.swift */,
-				802B117E261921F800742CFC /* Main.storyboard */,
-				802B1184261921FA00742CFC /* Assets.xcassets */,
-				802B1186261921FA00742CFC /* LaunchScreen.storyboard */,
+				8077ED81261A7D99006D7C25 /* Assets */,
 				802B1189261921FA00742CFC /* Info.plist */,
 				802B1181261921F800742CFC /* On_The_Map.xcdatamodeld */,
 			);
@@ -129,6 +135,73 @@
 				802B119F261921FA00742CFC /* Info.plist */,
 			);
 			path = "On The MapUITests";
+			sourceTree = "<group>";
+		};
+		802B11AE2619227200742CFC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		802B11AF2619228D00742CFC /* OTM Client */ = {
+			isa = PBXGroup;
+			children = (
+				8077ED85261A7F17006D7C25 /* OTMClient.swift */,
+			);
+			path = "OTM Client";
+			sourceTree = "<group>";
+		};
+		802B11B02619229D00742CFC /* OTM Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "OTM Requests";
+			sourceTree = "<group>";
+		};
+		802B11B1261922AA00742CFC /* OTM Responses */ = {
+			isa = PBXGroup;
+			children = (
+				8077ED8A261A80AB006D7C25 /* StudentLocation.swift */,
+				8077ED8F261A8440006D7C25 /* StudentsResults.swift */,
+			);
+			path = "OTM Responses";
+			sourceTree = "<group>";
+		};
+		802B11B3261922F200742CFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				802B11B1261922AA00742CFC /* OTM Responses */,
+				802B11B02619229D00742CFC /* OTM Requests */,
+				802B11AF2619228D00742CFC /* OTM Client */,
+				802B11AE2619227200742CFC /* Data */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		802B11B42619230500742CFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		802B11B52619230B00742CFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				802B117C261921F800742CFC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8077ED81261A7D99006D7C25 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				802B117E261921F800742CFC /* Main.storyboard */,
+				802B1184261921FA00742CFC /* Assets.xcassets */,
+				802B1186261921FA00742CFC /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */,
 				802B117D261921F800742CFC /* ViewController.swift in Sources */,
+				8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */,
 				802B1183261921F800742CFC /* On_The_Map.xcdatamodeld in Sources */,
+				8077ED86261A7F17006D7C25 /* OTMClient.swift in Sources */,
 				802B1179261921F800742CFC /* AppDelegate.swift in Sources */,
 				802B117B261921F800742CFC /* SceneDelegate.swift in Sources */,
 			);

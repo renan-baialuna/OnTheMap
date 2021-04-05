@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        OTMClient.getStudentsLocations { (students, error) in
+            for student in students {
+                print(student.firstName)
+            }
+        }
     }
 
 
