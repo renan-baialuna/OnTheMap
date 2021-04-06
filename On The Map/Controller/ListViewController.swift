@@ -9,16 +9,22 @@ import UIKit
 
 class ListViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
-    var students: [StudentLocation] = []
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.students = appDelegate.students
         
+        let tabController = tabBarController as? TabBarController
+        tabController?.reloadDelegate = self
         
         tableview.delegate = self
         tableview.dataSource = self
+    }
+    
+    func reloadTable() {
+        DispatchQueue.main.async {
+            self.tableview.reloadData()
+        }
     }
 }
 
@@ -29,16 +35,19 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.students.count
+        return self.appDelegate.students.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell") as! StudentTableViewCell
-        cell.title.text = students[indexPath.row].lastName
-        cell.subTitle.text = students[indexPath.row].firstName
-        
+        cell.title.text = appDelegate.students[indexPath.row].lastName
+        cell.subTitle.text = appDelegate.students[indexPath.row].firstName
         return cell
     }
-    
-    
+}
+
+extension ListViewController: reloadDelegate {
+    func reloadData() {
+        reloadTable()
+    }
 }

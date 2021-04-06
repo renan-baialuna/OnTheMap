@@ -19,21 +19,27 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         map.delegate = self
         
+        let tabController = tabBarController as? TabBarController
+        tabController?.reloadDelegate = self
         
-        
-        // Do any additional setup after loading the view.
-        OTMClient.getStudentsLocations { (students, error) in
-            self.appDelegate.students = students
-            for student in students {
-                let annotation = self.studentConverter(student: student)
-                self.annotations.append(annotation)
-            }
-            self.map.addAnnotations(self.annotations)
-        }
+        self.reloadMap()
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
+    func reloadMap() {
+        for student in appDelegate.students {
+            let annotation = self.studentConverter(student: student)
+            self.annotations.append(annotation)
+        }
+        self.map.addAnnotations(self.annotations)
+    }
+    
+    func mapClearAnnotations() {
+        let annotations = map.annotations.filter({ !($0 is MKUserLocation) })
+        map.removeAnnotations(annotations)
+    }
+    
     func studentConverter(student: StudentLocation) -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         let lat = student.latitude
@@ -73,6 +79,15 @@ extension MapViewController: MKMapViewDelegate {
             }
         }
     }
+}
+
+extension MapViewController: reloadDelegate {
+    func reloadData() {
+        mapClearAnnotations()
+        reloadMap()
+        
+    }
+    
     
 }
 
