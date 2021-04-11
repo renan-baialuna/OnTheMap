@@ -42,7 +42,12 @@ class TabBarController: UITabBarController {
         getData()
         reloadDelegate?.reloadData()
     }
+    
     @IBAction func mapButtonPressed(_ sender: Any) {
-        print("map")
+//        let controller: InsertLocationViewController
+//        controller = storyboard?.instantiateViewController(withIdentifier: "InsertLocationViewController") as! InsertLocationViewController
+//        self.navigationController?.pushViewController(controller, animated: true)
+        
+        performSegue(withIdentifier: "segue", sender: self)
     }
 }

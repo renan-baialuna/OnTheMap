@@ -28,6 +28,7 @@ class MapViewController: UIViewController {
 
 extension MapViewController: MKMapViewDelegate {
     func reloadMap() {
+        annotations = []
         for student in appDelegate.students {
             let annotation = self.studentConverter(student: student)
             self.annotations.append(annotation)
