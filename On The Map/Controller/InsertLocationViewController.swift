@@ -6,27 +6,48 @@
 //
 
 import UIKit
+import MapKit
 
 class InsertLocationViewController: UIViewController {
+    var annotation: CLLocationCoordinate2D?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getCoordinate( addressString : String, completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void ) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(addressString) { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    let location = placemark.location!
+                        
+                    completionHandler(location.coordinate, nil)
+                    return
+                }
+            }
+            completionHandler(kCLLocationCoordinate2DInvalid, error as NSError?)
+        }
     }
-    */
+    
     @IBAction func setLocation() {
-        self.navigationController?.popViewController(animated: true)
+        getCoordinate(addressString: "Av. 9 de Julho, 1060 - quadra K - Vila Virginia, Jundiaí - SP, 13209-011") { (coordinates, error) in
+            if error == nil {
+                print(coordinates.latitude)
+                print(coordinates.longitude)
+                self.annotation = coordinates
+                self.performSegue(withIdentifier: "mapDetail", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mapDetail" {
+            var controller = segue.destination as! MapConfirmationViewController
+            controller.coordinate = self.annotation
+        } else {
+            print("Não encontrado")
+        }
     }
     
 }
