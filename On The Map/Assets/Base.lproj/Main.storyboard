@@ -374,16 +374,23 @@
             <objects>
                 <tabBarController id="3Lo-2t-a0X" customClass="TabBarController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="jVb-aJ-Q3l">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="icon_pin" id="D25-0w-0u4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="x.circle.fill" catalog="system" id="jSs-m5-6iK">
                             <connections>
-                                <action selector="mapButtonPressed:" destination="3Lo-2t-a0X" id="Q2w-Gi-p1S"/>
+                                <action selector="logout:" destination="3Lo-2t-a0X" id="2VU-j2-iPd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon_refresh" id="U2P-3H-6qX">
-                            <connections>
-                                <action selector="refreshButtonPressed:" destination="3Lo-2t-a0X" id="HPZ-LL-PKn"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="icon_refresh" id="U2P-3H-6qX">
+                                <connections>
+                                    <action selector="refreshButtonPressed:" destination="3Lo-2t-a0X" id="HPZ-LL-PKn"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="icon_pin" id="D25-0w-0u4">
+                                <connections>
+                                    <action selector="mapButtonPressed:" destination="3Lo-2t-a0X" id="Q2w-Gi-p1S"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1gy-dQ-F7B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -410,6 +417,7 @@
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
         <image name="icon_refresh" width="24" height="24"/>
+        <image name="x.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

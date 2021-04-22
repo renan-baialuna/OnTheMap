@@ -32,9 +32,27 @@ class LoginViewController: UIViewController {
     
     @IBAction func login() {
         
-        
-        
-//        performSegue(withIdentifier: "toMain", sender: self)
+        if let user = userTextField.text, let password = passwordTextField.text, user != "", password != "" {
+            OTMClient.loginUser(user: user, password: password) { (response, error) in
+                if response {
+                    self.performSegue(withIdentifier: "toMain", sender: self)
+                } else {
+                    self.showLoginFailure(title: "Error", message: "Credentential not accepted")
+                }
+            }
+        }
+    }
+    
+    func showLoginFailure(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+  
     }
     
 }

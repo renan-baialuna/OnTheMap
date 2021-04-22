@@ -50,4 +50,8 @@ class TabBarController: UITabBarController {
         
         performSegue(withIdentifier: "segue", sender: self)
     }
+    
+    @IBAction func logout(_ sender: Any) {
+        self.navigationController!.popToRootViewController(animated: true)
+    }
 }
