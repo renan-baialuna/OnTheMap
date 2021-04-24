@@ -123,6 +123,43 @@ class OTMClient {
         return task
     }
     
+    class func logoutUser() {
+        var request = URLRequest(url: Endpoints.postSession.url)
+        request.httpMethod = "DELETE"
+        var xsrfCookie: HTTPCookie? = nil
+        let sharedCookieStorage = HTTPCookieStorage.shared
+        for cookie in sharedCookieStorage.cookies! {
+          if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+        }
+        let body = LogoutRequest(sessionId: Auth.id)
+        request.httpBody = try! JSONEncoder().encode(body)
+        if let xsrfCookie = xsrfCookie {
+          request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+        }
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            if error != nil {
+              return
+            }
+            let range = (5..<data!.count)
+            let newData = data?.subdata(in: range)
+            print(String(data: data!, encoding: .utf8)!)
+            
+            let decoder = JSONDecoder()
+            do {
+                let responseObject = try decoder.decode(SessionData.self, from: newData!)
+                
+            } catch  {
+                print("error")
+            }
+            Auth.id = ""
+            Auth.key = ""
+            Auth.registered = false
+            
+        }
+        task.resume()
+    }
+    
     class func loginUser(user: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         
         let body = UserBody(udacity: UserData(username: user, password: password))

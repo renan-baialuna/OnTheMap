@@ -20,7 +20,7 @@
 		8068CC42261B63F10008D21D /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068CC41261B63F10008D21D /* ListViewController.swift */; };
 		8068CC47261B67CD0008D21D /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068CC46261B67CD0008D21D /* StudentTableViewCell.swift */; };
 		8068CC5F261BACE00008D21D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8068CC5E261BACE00008D21D /* TabBarController.swift */; };
-		8071DFD726308E04003F2DC8 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DFD626308E04003F2DC8 /* userInfo.swift */; };
+		8071DFD726308E04003F2DC8 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071DFD626308E04003F2DC8 /* UserInfo.swift */; };
 		8077ED86261A7F17006D7C25 /* OTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED85261A7F17006D7C25 /* OTMClient.swift */; };
 		8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8A261A80AB006D7C25 /* StudentLocation.swift */; };
 		8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8F261A8440006D7C25 /* StudentsResults.swift */; };
@@ -67,7 +67,7 @@
 		8068CC41261B63F10008D21D /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8068CC46261B67CD0008D21D /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		8068CC5E261BACE00008D21D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		8071DFD626308E04003F2DC8 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
+		8071DFD626308E04003F2DC8 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		8077ED85261A7F17006D7C25 /* OTMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMClient.swift; sourceTree = "<group>"; };
 		8077ED8A261A80AB006D7C25 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		8077ED8F261A8440006D7C25 /* StudentsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsResults.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			children = (
 				8077ED8A261A80AB006D7C25 /* StudentLocation.swift */,
 				8077ED8F261A8440006D7C25 /* StudentsResults.swift */,
-				8071DFD626308E04003F2DC8 /* userInfo.swift */,
+				8071DFD626308E04003F2DC8 /* UserInfo.swift */,
 			);
 			path = "OTM Responses";
 			sourceTree = "<group>";
@@ -363,7 +363,7 @@
 			files = (
 				80B66F4D2627D36D009BA69E /* UserData.swift in Sources */,
 				80B66F432623D8FE009BA69E /* MapConfirmationViewController.swift in Sources */,
-				8071DFD726308E04003F2DC8 /* userInfo.swift in Sources */,
+				8071DFD726308E04003F2DC8 /* UserInfo.swift in Sources */,
 				8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */,
 				80B66F552627D454009BA69E /* UserBody.swift in Sources */,
 				802B117D261921F800742CFC /* MapViewController.swift in Sources */,

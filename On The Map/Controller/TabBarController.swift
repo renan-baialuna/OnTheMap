@@ -52,6 +52,8 @@ class TabBarController: UITabBarController {
     }
     
     @IBAction func logout(_ sender: Any) {
+        
+        OTMClient.logoutUser()
         self.navigationController!.popToRootViewController(animated: true)
     }
 }
