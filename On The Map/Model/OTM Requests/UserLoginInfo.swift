@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct UserBody: Codable {
-    let udacity: UserData
+struct UserLoginInfo: Codable {
+    let udacity: UserLoginData
 }

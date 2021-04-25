@@ -24,6 +24,12 @@ class MapViewController: UIViewController {
         
         self.reloadMap()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        OTMClient.getUserLocation()
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {

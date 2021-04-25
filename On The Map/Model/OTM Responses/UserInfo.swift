@@ -24,14 +24,3 @@ struct Session: Codable {
     let id, expiration: String
 }
 
-struct SessionData: Codable {
-    let session: Session
-}
-
-struct LogoutRequest: Codable {
-    let sessionId: String
-    
-    enum CodingKeys: String, CodingKey {
-        case sessionId = "session_id"
-    }
-}

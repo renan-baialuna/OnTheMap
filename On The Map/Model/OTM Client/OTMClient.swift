@@ -13,6 +13,7 @@ class OTMClient {
         static var registered: Bool = false
         static var key: String = ""
         static var id: String = ""
+        static var hasLocation: Bool = false
     }
     
     enum Endpoints {
@@ -27,7 +28,7 @@ class OTMClient {
             case .postSession:
                 return "https://onthemap-api.udacity.com/v1/session"
             case .getUserLocation(let id):
-                return "https://onthemap-api.udacity.com/v1/users/\(id)"
+                return "https://onthemap-api.udacity.com/v1/StudentLocation?uniqueKey=\(id)"
             }
         }
         
@@ -147,7 +148,7 @@ class OTMClient {
             
             let decoder = JSONDecoder()
             do {
-                let responseObject = try decoder.decode(SessionData.self, from: newData!)
+                let responseObject = try decoder.decode(SessionLogoutData.self, from: newData!)
                 
             } catch  {
                 print("error")
@@ -162,7 +163,7 @@ class OTMClient {
     
     class func loginUser(user: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         
-        let body = UserBody(udacity: UserData(username: user, password: password))
+        let body = UserLoginInfo(udacity: UserLoginData(username: user, password: password))
         taskForPOSTRequest(url: Endpoints.postSession.url, addAccept: true, responseType: UserInfo.self, body: body) { (response, error) in
             if let response = response {
                 Auth.id = response.session.id
@@ -173,6 +174,17 @@ class OTMClient {
                 completion(false, error)
             }
         }
+    }
+    
+    class func getUserLocation() {
+        taskForGetRequest(url: Endpoints.getUserLocation(Auth.key).url, responseType: UserLocationInfoResponse.self) { (response, error) in
+            if error == nil {
+                Auth.hasLocation = response?.results != nil
+            } else {
+//
+            }
+        }
+        
     }
     
     class func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {

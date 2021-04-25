@@ -222,6 +222,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmationAction" destination="p1m-m4-ba2" eventType="touchUpInside" id="x6F-aB-uiY"/>
+                                </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ucU-fk-a6F">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="836"/>

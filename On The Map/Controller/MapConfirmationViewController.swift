@@ -16,9 +16,6 @@ class MapConfirmationViewController: UIViewController {
     var annotation = MKPointAnnotation()
     var coordinate: CLLocationCoordinate2D!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,5 +26,10 @@ class MapConfirmationViewController: UIViewController {
         map.addAnnotation(annotation)
         let region = MKCoordinateRegion( center: coordinate, latitudinalMeters: CLLocationDistance(exactly: 1000)!, longitudinalMeters: CLLocationDistance(exactly: 1000)!)
         map.setRegion(map.regionThatFits(region), animated: true)
+    }
+    
+    @IBAction func confirmationAction() {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
 }
