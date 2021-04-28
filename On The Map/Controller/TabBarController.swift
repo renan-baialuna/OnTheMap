@@ -47,7 +47,7 @@ class TabBarController: UITabBarController {
 //        let controller: InsertLocationViewController
 //        controller = storyboard?.instantiateViewController(withIdentifier: "InsertLocationViewController") as! InsertLocationViewController
 //        self.navigationController?.pushViewController(controller, animated: true)
-        
+        print("user has location: \(OTMClient.Auth.hasLocation)")
         performSegue(withIdentifier: "segue", sender: self)
     }
     

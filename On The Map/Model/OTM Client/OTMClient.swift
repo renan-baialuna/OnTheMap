@@ -16,10 +16,16 @@ class OTMClient {
         static var hasLocation: Bool = false
     }
     
+    struct User {
+        static var firstName: String = ""
+        static var lastName: String = ""
+    }
+    
     enum Endpoints {
         case getStudentsLocation
         case postSession
         case getUserLocation(String)
+        case getUserInformation(String)
         
         var stringValue: String {
             switch self {
@@ -29,6 +35,8 @@ class OTMClient {
                 return "https://onthemap-api.udacity.com/v1/session"
             case .getUserLocation(let id):
                 return "https://onthemap-api.udacity.com/v1/StudentLocation?uniqueKey=\(id)"
+            case .getUserInformation(let id):
+                return "https://onthemap-api.udacity.com/v1/users/\(id)"
             }
         }
         
@@ -36,6 +44,8 @@ class OTMClient {
             return URL(string: stringValue)!
         }
     }
+    
+    // MARK: - Base Calls
     
     @discardableResult class func taskForGetRequest<ResponseType: Decodable>(url: URL, addAccept: Bool = false, responseType: ResponseType.Type, completion: @escaping(ResponseType?, Error?) -> Void) -> URLSessionTask {
         
@@ -91,7 +101,7 @@ class OTMClient {
                 do {
                     let decoder = JSONDecoder()
                     var responseObject: ResponseType
-                    print(String(data: data, encoding: .utf8)!)
+//                    print(String(data: data, encoding: .utf8)!)
                     if addAccept {
                         let range = 5..<data.count
                         let newData = data.subdata(in: range)
@@ -144,7 +154,6 @@ class OTMClient {
             }
             let range = (5..<data!.count)
             let newData = data?.subdata(in: range)
-            print(String(data: data!, encoding: .utf8)!)
             
             let decoder = JSONDecoder()
             do {
@@ -161,11 +170,14 @@ class OTMClient {
         task.resume()
     }
     
+    // MARK: - Calls Implementations
+    
     class func loginUser(user: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         
         let body = UserLoginInfo(udacity: UserLoginData(username: user, password: password))
         taskForPOSTRequest(url: Endpoints.postSession.url, addAccept: true, responseType: UserInfo.self, body: body) { (response, error) in
             if let response = response {
+                OTMClient.getUserInformation(id: response.account.key)
                 Auth.id = response.session.id
                 Auth.key = response.account.key
                 Auth.registered = response.account.registered
@@ -185,6 +197,17 @@ class OTMClient {
             }
         }
         
+    }
+    
+    class func getUserInformation(id: String) {
+        taskForGetRequest(url: Endpoints.getUserInformation(id).url, addAccept: true, responseType: UserInformationComplete.self) { (response, error) in
+            if error == nil {
+                User.firstName = response?.firstName ?? ""
+                User.lastName = response?.lastName ?? ""
+            } else {
+//
+            }
+        }
     }
     
     class func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {
