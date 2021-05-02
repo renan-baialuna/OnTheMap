@@ -29,6 +29,7 @@
 		8077ED86261A7F17006D7C25 /* OTMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED85261A7F17006D7C25 /* OTMClient.swift */; };
 		8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8A261A80AB006D7C25 /* StudentLocation.swift */; };
 		8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8F261A8440006D7C25 /* StudentsResults.swift */; };
+		80B1B7D3263F21D600670DE1 /* UpdateDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B7D2263F21D600670DE1 /* UpdateDate.swift */; };
 		80B66F432623D8FE009BA69E /* MapConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F422623D8FE009BA69E /* MapConfirmationViewController.swift */; };
 		80B66F482627CC25009BA69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F472627CC25009BA69E /* LoginViewController.swift */; };
 		80B66F4D2627D36D009BA69E /* UserLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F4C2627D36D009BA69E /* UserLoginData.swift */; };
@@ -81,6 +82,7 @@
 		8077ED85261A7F17006D7C25 /* OTMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTMClient.swift; sourceTree = "<group>"; };
 		8077ED8A261A80AB006D7C25 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		8077ED8F261A8440006D7C25 /* StudentsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsResults.swift; sourceTree = "<group>"; };
+		80B1B7D2263F21D600670DE1 /* UpdateDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDate.swift; sourceTree = "<group>"; };
 		80B66F422623D8FE009BA69E /* MapConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfirmationViewController.swift; sourceTree = "<group>"; };
 		80B66F472627CC25009BA69E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80B66F4C2627D36D009BA69E /* UserLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginData.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				802A21922635EA8A0081241A /* SessionLogoutData.swift */,
 				802A21972635EBAF0081241A /* UserLocationInfoResponse.swift */,
 				802A219F263795670081241A /* UserInformationComplete.swift */,
+				80B1B7D2263F21D600670DE1 /* UpdateDate.swift */,
 			);
 			path = "OTM Responses";
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				802A21982635EBAF0081241A /* UserLocationInfoResponse.swift in Sources */,
 				80003AD2261CC69C00C30196 /* InsertLocationViewController.swift in Sources */,
 				8068CC47261B67CD0008D21D /* StudentTableViewCell.swift in Sources */,
+				80B1B7D3263F21D600670DE1 /* UpdateDate.swift in Sources */,
 				802B1179261921F800742CFC /* AppDelegate.swift in Sources */,
 				8068CC42261B63F10008D21D /* ListViewController.swift in Sources */,
 				80B66F482627CC25009BA69E /* LoginViewController.swift in Sources */,

@@ -196,6 +196,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9u4-xd-JJX"/>
                     <connections>
+                        <outlet property="linkTextField" destination="e4V-Lr-aEy" id="bJ4-GW-fqs"/>
+                        <outlet property="locationTextField" destination="o0T-Rh-iXI" id="tbc-Kk-7TW"/>
                         <segue destination="p1m-m4-ba2" kind="show" identifier="mapDetail" id="pbj-dY-04P"/>
                     </connections>
                 </viewController>

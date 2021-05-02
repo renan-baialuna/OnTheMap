@@ -26,6 +26,8 @@ class OTMClient {
         case postSession
         case getUserLocation(String)
         case getUserInformation(String)
+        case postLocation
+        case putLocation(String)
         
         var stringValue: String {
             switch self {
@@ -37,6 +39,10 @@ class OTMClient {
                 return "https://onthemap-api.udacity.com/v1/StudentLocation?uniqueKey=\(id)"
             case .getUserInformation(let id):
                 return "https://onthemap-api.udacity.com/v1/users/\(id)"
+            case .postLocation:
+                return "https://onthemap-api.udacity.com/v1/StudentLocation"
+            case .putLocation(let id):
+                return "https://onthemap-api.udacity.com/v1/StudentLocation/\(id)"
             }
         }
         
@@ -134,6 +140,36 @@ class OTMClient {
         return task
     }
     
+    class func taskForPUTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionTask {
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONEncoder().encode(body)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                var responseObject: ResponseType
+                responseObject = try decoder.decode(ResponseType.self, from: data)
+                DispatchQueue.main.async {
+                    completion(responseObject, nil)
+                }
+            } catch {
+                
+                
+            }
+          }
+        task.resume()
+        return task
+    }
+    
     class func logoutUser() {
         var request = URLRequest(url: Endpoints.postSession.url)
         request.httpMethod = "DELETE"
@@ -210,12 +246,33 @@ class OTMClient {
         }
     }
     
+    class func postLocation(location: Location, mediaURL: String) {
+        let body = UserRegistrationData(id: Auth.id, firstName: User.firstName, lastName: User.lastName, mediaURL: mediaURL, location: location)
+        taskForPOSTRequest(url: Endpoints.postLocation.url, responseType: SucessCreationReturn.self, body: body) { (response, error) in
+            if error == nil {
+//                print(response?.objectId)
+            }
+        }
+    }
+    
     class func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {
         taskForGetRequest(url: Endpoints.getStudentsLocation.url, responseType: StudentsResults.self) { (response, error) in
             if let response = response {
                 completion(response.results, nil)
             } else {
                 completion([], error)
+            }
+        }
+    }
+    
+    class func putLocation(location: Location, mediaURL: String) {
+        let url = Endpoints.putLocation(Auth.id).url
+        let body = UserRegistrationData(id: Auth.id, firstName: User.firstName, lastName: User.lastName, mediaURL: mediaURL, location: location)
+        taskForPUTRequest(url: url, responseType: UpdateDate.self, body: body) { (response, error) in
+            if error == nil {
+//
+            } else {
+//
             }
         }
     }

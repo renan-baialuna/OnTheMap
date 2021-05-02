@@ -24,3 +24,7 @@ struct Session: Codable {
     let id, expiration: String
 }
 
+struct SucessCreationReturn: Codable {
+    let createdAt: String
+    let objectId: String
+}

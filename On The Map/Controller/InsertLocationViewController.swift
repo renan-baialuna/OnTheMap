@@ -10,6 +10,9 @@ import MapKit
 
 class InsertLocationViewController: UIViewController {
     var annotation: CLLocationCoordinate2D?
+    
+    @IBOutlet weak var linkTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +34,14 @@ class InsertLocationViewController: UIViewController {
     }
     
     @IBAction func setLocation() {
-        getCoordinate(addressString: "Av. 9 de Julho, 1060 - quadra K - Vila Virginia, Jundiaí - SP, 13209-011") { (coordinates, error) in
-            if error == nil {
-                print(coordinates.latitude)
-                print(coordinates.longitude)
-                self.annotation = coordinates
-                self.performSegue(withIdentifier: "mapDetail", sender: self)
+        if let locationString = locationTextField.text, locationString != "" {
+            getCoordinate(addressString: locationString) { (coordinates, error) in
+                if error == nil {
+                    self.annotation = coordinates
+                    self.performSegue(withIdentifier: "mapDetail", sender: self)
+                } else {
+        //
+                }
             }
         }
     }
@@ -45,6 +50,8 @@ class InsertLocationViewController: UIViewController {
         if segue.identifier == "mapDetail" {
             var controller = segue.destination as! MapConfirmationViewController
             controller.coordinate = self.annotation
+            controller.mapString = locationTextField.text
+            controller.mediaURL = linkTextField.text
         } else {
             print("Não encontrado")
         }
