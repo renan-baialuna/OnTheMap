@@ -18,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8HB-2L-CBx">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="75" id="ZRy-12-tJc" customClass="StudentTableViewCell" customModule="On_The_Map" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="75"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZRy-12-tJc" id="HlV-Eg-dFY">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wes-Ue-yhz">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wes-Ue-yhz">
+                                                    <rect key="frame" x="20" y="11" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-0E-5Gw">
-                                                    <rect key="frame" x="32" y="37" width="36" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="web address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-0E-5Gw">
+                                                    <rect key="frame" x="32" y="37" width="350" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -44,6 +44,7 @@
                                             <constraints>
                                                 <constraint firstItem="kTV-0E-5Gw" firstAttribute="top" secondItem="wes-Ue-yhz" secondAttribute="bottom" constant="5" id="Jso-JG-Nvk"/>
                                                 <constraint firstItem="wes-Ue-yhz" firstAttribute="top" secondItem="HlV-Eg-dFY" secondAttribute="topMargin" id="XAQ-w0-oNk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kTV-0E-5Gw" secondAttribute="trailing" constant="12" id="hGA-ZG-1T6"/>
                                                 <constraint firstItem="kTV-0E-5Gw" firstAttribute="leading" secondItem="wes-Ue-yhz" secondAttribute="leading" constant="12" id="jvd-PC-bpE"/>
                                                 <constraint firstItem="wes-Ue-yhz" firstAttribute="leading" secondItem="HlV-Eg-dFY" secondAttribute="leadingMargin" id="rRK-Pj-dfM"/>
                                             </constraints>
@@ -59,10 +60,10 @@
                         <viewLayoutGuide key="safeArea" id="oA1-Sz-bEY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8HB-2L-CBx" firstAttribute="top" secondItem="oA1-Sz-bEY" secondAttribute="top" constant="20" id="2Qz-e6-CXZ"/>
-                            <constraint firstItem="8HB-2L-CBx" firstAttribute="leading" secondItem="oA1-Sz-bEY" secondAttribute="leading" constant="20" id="8h8-Rw-ZSy"/>
-                            <constraint firstItem="oA1-Sz-bEY" firstAttribute="trailing" secondItem="8HB-2L-CBx" secondAttribute="trailing" constant="20" id="MjA-WN-hxZ"/>
-                            <constraint firstItem="oA1-Sz-bEY" firstAttribute="bottom" secondItem="8HB-2L-CBx" secondAttribute="bottom" constant="20" id="aMZ-0b-IFR"/>
+                            <constraint firstItem="8HB-2L-CBx" firstAttribute="top" secondItem="oA1-Sz-bEY" secondAttribute="top" id="2Qz-e6-CXZ"/>
+                            <constraint firstItem="8HB-2L-CBx" firstAttribute="leading" secondItem="oA1-Sz-bEY" secondAttribute="leading" id="8h8-Rw-ZSy"/>
+                            <constraint firstItem="oA1-Sz-bEY" firstAttribute="trailing" secondItem="8HB-2L-CBx" secondAttribute="trailing" id="MjA-WN-hxZ"/>
+                            <constraint firstItem="oA1-Sz-bEY" firstAttribute="bottom" secondItem="8HB-2L-CBx" secondAttribute="bottom" id="aMZ-0b-IFR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Kbm-nU-t34"/>
@@ -263,16 +264,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-gs-k9H">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RYz-MZ-SAx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oL0-gs-k9H" firstAttribute="top" secondItem="RYz-MZ-SAx" secondAttribute="top" constant="20" id="ad2-Zx-y4s"/>
-                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="bottom" secondItem="oL0-gs-k9H" secondAttribute="bottom" constant="20" id="lIo-EK-j46"/>
-                            <constraint firstItem="oL0-gs-k9H" firstAttribute="leading" secondItem="RYz-MZ-SAx" secondAttribute="leading" constant="20" id="vFG-Ea-joM"/>
-                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="trailing" secondItem="oL0-gs-k9H" secondAttribute="trailing" constant="20" id="zyG-Wd-cwP"/>
+                            <constraint firstItem="oL0-gs-k9H" firstAttribute="top" secondItem="RYz-MZ-SAx" secondAttribute="top" id="ad2-Zx-y4s"/>
+                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="bottom" secondItem="oL0-gs-k9H" secondAttribute="bottom" id="lIo-EK-j46"/>
+                            <constraint firstItem="oL0-gs-k9H" firstAttribute="leading" secondItem="RYz-MZ-SAx" secondAttribute="leading" id="vFG-Ea-joM"/>
+                            <constraint firstItem="RYz-MZ-SAx" firstAttribute="trailing" secondItem="oL0-gs-k9H" secondAttribute="trailing" id="zyG-Wd-cwP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ave-Z2-zuX"/>

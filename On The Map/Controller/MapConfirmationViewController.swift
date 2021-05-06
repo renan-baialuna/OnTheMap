@@ -33,15 +33,35 @@ class MapConfirmationViewController: UIViewController {
         if let coordinate = coordinate, let mapString = mapString, let mediaURL = mediaURL {
             let location = Location(latitude: coordinate.latitude, longitude: coordinate.longitude, mapString: mapString)
             if OTMClient.Auth.hasLocation {
-                OTMClient.putLocation(location: location, mediaURL: mediaURL)
+                putLocation(location: location, mediaURL: mediaURL)
             } else {
-                OTMClient.postLocation(location: location, mediaURL: mediaURL)
+                postLocation(location: location, mediaURL: mediaURL)
             }
             let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
             self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
         } else {
 //            error treatment
         }
-        
+    }
+    
+    func putLocation(location: Location, mediaURL: String) {
+        let url = OTMClient.Endpoints.putLocation(OTMClient.Auth.id).url
+        let body = UserRegistrationData(id: OTMClient.Auth.id, firstName: OTMClient.User.firstName, lastName: OTMClient.User.lastName, mediaURL: mediaURL, location: location)
+        OTMClient.taskForPUTRequest(url: url, responseType: UpdateDate.self, body: body) { (response, error) in
+            if error == nil {
+            } else {
+                self.showLoginFailure(title: "Error", message: "Unable to complete action")
+            }
+        }
+    }
+    
+    func postLocation(location: Location, mediaURL: String) {
+        let body = UserRegistrationData(id: OTMClient.Auth.id, firstName: OTMClient.User.firstName, lastName: OTMClient.User.lastName, mediaURL: mediaURL, location: location)
+        OTMClient.taskForPOSTRequest(url: OTMClient.Endpoints.postLocation.url, responseType: SucessCreationReturn.self, body: body) { (response, error) in
+            if error == nil {
+            } else {
+                self.showLoginFailure(title: "Error", message: "Unable to complete action")
+            }
+        }
     }
 }

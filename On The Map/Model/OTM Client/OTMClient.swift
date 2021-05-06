@@ -107,7 +107,6 @@ class OTMClient {
                 do {
                     let decoder = JSONDecoder()
                     var responseObject: ResponseType
-//                    print(String(data: data, encoding: .utf8)!)
                     if addAccept {
                         let range = 5..<data.count
                         let newData = data.subdata(in: range)
@@ -119,17 +118,7 @@ class OTMClient {
                         completion(responseObject, nil)
                     }
                 } catch {
-    //                do {
-    //                    let decoder = JSONDecoder()
-    //                    let errorResponse = try decoder.decode(TMDBResponse.self, from: data)
-    //                    DispatchQueue.main.async {
-    //                        completion(nil, errorResponse)
-    //                    }
-    //                } catch {
-    //                    DispatchQueue.main.async {
-    //                        completion(nil, error)
-    //                    }
-    //                }
+                    
                 }
             } else {
                 completion(nil, error)
@@ -246,15 +235,6 @@ class OTMClient {
         }
     }
     
-    class func postLocation(location: Location, mediaURL: String) {
-        let body = UserRegistrationData(id: Auth.id, firstName: User.firstName, lastName: User.lastName, mediaURL: mediaURL, location: location)
-        taskForPOSTRequest(url: Endpoints.postLocation.url, responseType: SucessCreationReturn.self, body: body) { (response, error) in
-            if error == nil {
-//                print(response?.objectId)
-            }
-        }
-    }
-    
     class func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {
         taskForGetRequest(url: Endpoints.getStudentsLocation.url, responseType: StudentsResults.self) { (response, error) in
             if let response = response {
@@ -265,15 +245,4 @@ class OTMClient {
         }
     }
     
-    class func putLocation(location: Location, mediaURL: String) {
-        let url = Endpoints.putLocation(Auth.id).url
-        let body = UserRegistrationData(id: Auth.id, firstName: User.firstName, lastName: User.lastName, mediaURL: mediaURL, location: location)
-        taskForPUTRequest(url: url, responseType: UpdateDate.self, body: body) { (response, error) in
-            if error == nil {
-//
-            } else {
-//
-            }
-        }
-    }
 }

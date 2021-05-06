@@ -19,7 +19,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         map.delegate = self
         
-        let tabController = tabBarController as? TabBarController
+        let tabController = self.tabBarController as? TabBarController
         tabController?.reloadDelegate = self
         
         self.reloadMap()

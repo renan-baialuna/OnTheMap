@@ -40,7 +40,7 @@ class InsertLocationViewController: UIViewController {
                     self.annotation = coordinates
                     self.performSegue(withIdentifier: "mapDetail", sender: self)
                 } else {
-        //
+                    self.showLoginFailure(title: "Error", message: "Location Not Found")
                 }
             }
         }

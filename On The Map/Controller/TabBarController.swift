@@ -24,7 +24,6 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         getData()
-        // Do any additional setup after loading the view.
     }
     
     func getData() {
@@ -44,9 +43,6 @@ class TabBarController: UITabBarController {
     }
     
     @IBAction func mapButtonPressed(_ sender: Any) {
-//        let controller: InsertLocationViewController
-//        controller = storyboard?.instantiateViewController(withIdentifier: "InsertLocationViewController") as! InsertLocationViewController
-//        self.navigationController?.pushViewController(controller, animated: true)
         print("user has location: \(OTMClient.Auth.hasLocation)")
         performSegue(withIdentifier: "segue", sender: self)
     }

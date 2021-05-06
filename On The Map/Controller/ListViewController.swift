@@ -14,7 +14,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabController = tabBarController as? TabBarController
+        let tabController = self.tabBarController as? TabBarController
         tabController?.reloadDelegate = self
         
         tableview.delegate = self
@@ -40,9 +40,16 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "cell") as! StudentTableViewCell
-        cell.title.text = appDelegate.students[indexPath.row].lastName
-        cell.subTitle.text = appDelegate.students[indexPath.row].firstName
+        cell.title.text = "\(appDelegate.students[indexPath.row].lastName) \(appDelegate.students[indexPath.row].firstName)"
+        cell.subTitle.text = appDelegate.students[indexPath.row].mediaURL
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let app = UIApplication.shared
+        if appDelegate.students[indexPath.row].mediaURL != "" {
+            app.openURL(URL(string: self.appDelegate.students[indexPath.row].mediaURL)!)
+        }
     }
 }
 
