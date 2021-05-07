@@ -31,16 +31,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wes-Ue-yhz">
                                                     <rect key="frame" x="20" y="11" width="45" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="detail"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="web address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTV-0E-5Gw">
                                                     <rect key="frame" x="32" y="37" width="350" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="selection"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstItem="kTV-0E-5Gw" firstAttribute="top" secondItem="wes-Ue-yhz" secondAttribute="bottom" constant="5" id="Jso-JG-Nvk"/>
                                                 <constraint firstItem="wes-Ue-yhz" firstAttribute="top" secondItem="HlV-Eg-dFY" secondAttribute="topMargin" id="XAQ-w0-oNk"/>
@@ -66,7 +67,9 @@
                             <constraint firstItem="oA1-Sz-bEY" firstAttribute="bottom" secondItem="8HB-2L-CBx" secondAttribute="bottom" id="aMZ-0b-IFR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Kbm-nU-t34"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-deselected" selectedImage="icon_listview-selected" id="Kbm-nU-t34">
+                        <color key="badgeColor" name="detail"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableview" destination="8HB-2L-CBx" id="3Vp-RQ-qwg"/>
                     </connections>
@@ -85,13 +88,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-Ts-Wyv">
                                 <rect key="frame" x="0.0" y="836" width="414" height="60"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="detail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="aFB-oZ-KuW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" name="selection"/>
                                 </state>
                                 <connections>
                                     <action selector="setLocation" destination="zsm-eI-5sc" eventType="touchUpInside" id="oXL-fA-SVx"/>
@@ -102,7 +105,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD4-Ma-GOY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="167"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3MX-MI-O2K">
                                         <rect key="frame" x="0.0" y="167" width="414" height="167.5"/>
@@ -113,11 +116,12 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzR-gz-Yct">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" name="detail"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e4V-Lr-aEy">
                                                         <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                        <color key="backgroundColor" name="foreground"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -130,7 +134,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0b7-wE-5UT" secondAttribute="trailing" constant="20" id="KoD-J0-c3X"/>
                                             <constraint firstItem="0b7-wE-5UT" firstAttribute="centerX" secondItem="3MX-MI-O2K" secondAttribute="centerX" id="PFk-ol-dxR"/>
@@ -140,7 +144,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-Ka-V9N">
                                         <rect key="frame" x="0.0" y="334.5" width="414" height="167"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7D-go-ptD">
                                         <rect key="frame" x="0.0" y="501.5" width="414" height="167.5"/>
@@ -151,11 +155,12 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvq-kk-c68">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" name="detail"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0T-Rh-iXI">
                                                         <rect key="frame" x="0.0" y="28.5" width="374" height="34"/>
+                                                        <color key="backgroundColor" name="foreground"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -168,7 +173,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                         <constraints>
                                             <constraint firstItem="jOR-bC-ou9" firstAttribute="centerY" secondItem="h7D-go-ptD" secondAttribute="centerY" id="1YJ-0g-Dsd"/>
                                             <constraint firstAttribute="trailing" secondItem="jOR-bC-ou9" secondAttribute="trailing" constant="20" id="3RP-1l-r8S"/>
@@ -178,13 +183,13 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR0-mm-Cxm">
                                         <rect key="frame" x="0.0" y="669" width="414" height="167"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="background"/>
                                     </view>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ceh-Uj-5kC"/>
-                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="bcL-Ts-Wyv" firstAttribute="top" secondItem="e6E-YV-VEK" secondAttribute="bottom" id="Jit-eY-UC1"/>
                             <constraint firstAttribute="trailing" secondItem="e6E-YV-VEK" secondAttribute="trailing" id="MYk-gA-OnL"/>
@@ -216,14 +221,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xug-K1-KD0">
                                 <rect key="frame" x="0.0" y="836" width="414" height="60"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="detail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="WRs-dp-SUH"/>
                                     <constraint firstAttribute="height" constant="60" id="cIB-3h-zSO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" name="selection"/>
                                 </state>
                                 <connections>
                                     <action selector="confirmationAction" destination="p1m-m4-ba2" eventType="touchUpInside" id="x6F-aB-uiY"/>
@@ -234,7 +239,7 @@
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b9e-h7-V3M"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="xug-K1-KD0" secondAttribute="bottom" id="AUF-zd-Mch"/>
                             <constraint firstItem="ucU-fk-a6F" firstAttribute="trailing" secondItem="b9e-h7-V3M" secondAttribute="trailing" id="B0u-yT-eUN"/>
@@ -268,7 +273,7 @@
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RYz-MZ-SAx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="oL0-gs-k9H" firstAttribute="top" secondItem="RYz-MZ-SAx" secondAttribute="top" id="ad2-Zx-y4s"/>
                             <constraint firstItem="RYz-MZ-SAx" firstAttribute="bottom" secondItem="oL0-gs-k9H" secondAttribute="bottom" id="lIo-EK-j46"/>
@@ -276,7 +281,9 @@
                             <constraint firstItem="RYz-MZ-SAx" firstAttribute="trailing" secondItem="oL0-gs-k9H" secondAttribute="trailing" id="zyG-Wd-cwP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ave-Z2-zuX"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="ave-Z2-zuX">
+                        <color key="badgeColor" name="detail"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="map" destination="oL0-gs-k9H" id="GHd-25-m2Z"/>
                     </connections>
@@ -293,22 +300,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO4-aw-5Of">
-                                <rect key="frame" x="20" y="129" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="9AM-tD-TzC">
                                 <rect key="frame" x="30" y="348" width="354" height="200"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nYJ-ht-yFd">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="58.5"/>
+                                        <color key="backgroundColor" name="foreground"/>
+                                        <color key="textColor" name="detail"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DYD-BQ-gwt">
                                         <rect key="frame" x="0.0" y="141.5" width="354" height="58.5"/>
+                                        <color key="backgroundColor" name="foreground"/>
+                                        <color key="textColor" name="detail"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -319,36 +324,52 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57A-z4-SD9">
                                 <rect key="frame" x="0.0" y="836" width="414" height="60"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="detail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="dnV-71-5Rg"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="selection"/>
                                 </state>
                                 <connections>
                                     <action selector="login" destination="L2x-oa-p80" eventType="touchUpInside" id="pJs-Cy-Brt"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-u" translatesAutoresizingMaskIntoConstraints="NO" id="qM4-hj-OkP">
+                                <rect key="frame" x="176" y="123" width="62" height="62"/>
+                                <color key="tintColor" name="detail"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qM4-hj-OkP" secondAttribute="height" multiplier="1:1" id="tQw-x4-VNB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to Udacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pO4-aw-5Of">
+                                <rect key="frame" x="127" y="200" width="160" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" name="selection"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qJY-Q6-IWr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="9AM-tD-TzC" firstAttribute="leading" secondItem="qJY-Q6-IWr" secondAttribute="leading" constant="30" id="1Dp-AS-6sU"/>
-                            <constraint firstItem="qJY-Q6-IWr" firstAttribute="trailing" secondItem="pO4-aw-5Of" secondAttribute="trailing" constant="20" id="6lz-9I-Pd7"/>
                             <constraint firstItem="9AM-tD-TzC" firstAttribute="centerX" secondItem="q49-LI-6Pb" secondAttribute="centerX" id="7zA-zq-bXm"/>
                             <constraint firstItem="57A-z4-SD9" firstAttribute="trailing" secondItem="qJY-Q6-IWr" secondAttribute="trailing" id="Dic-wP-GPy"/>
                             <constraint firstAttribute="bottom" secondItem="57A-z4-SD9" secondAttribute="bottom" id="EUU-YY-yWp"/>
-                            <constraint firstItem="pO4-aw-5Of" firstAttribute="leading" secondItem="qJY-Q6-IWr" secondAttribute="leading" constant="20" id="J0H-4h-5oK"/>
                             <constraint firstItem="qJY-Q6-IWr" firstAttribute="trailing" secondItem="9AM-tD-TzC" secondAttribute="trailing" constant="30" id="Muz-mh-aY2"/>
-                            <constraint firstItem="pO4-aw-5Of" firstAttribute="top" secondItem="qJY-Q6-IWr" secondAttribute="top" constant="41" id="kVT-vo-4fX"/>
+                            <constraint firstItem="pO4-aw-5Of" firstAttribute="top" secondItem="qM4-hj-OkP" secondAttribute="bottom" constant="15" id="QnS-jB-hCJ"/>
+                            <constraint firstItem="qM4-hj-OkP" firstAttribute="top" secondItem="qJY-Q6-IWr" secondAttribute="top" constant="35" id="SMi-t9-6BK"/>
+                            <constraint firstItem="qM4-hj-OkP" firstAttribute="centerX" secondItem="q49-LI-6Pb" secondAttribute="centerX" id="mhe-tr-f6o"/>
                             <constraint firstItem="9AM-tD-TzC" firstAttribute="centerY" secondItem="q49-LI-6Pb" secondAttribute="centerY" id="pVJ-km-nTR"/>
+                            <constraint firstItem="pO4-aw-5Of" firstAttribute="centerX" secondItem="q49-LI-6Pb" secondAttribute="centerX" id="y6B-Vb-oo2"/>
                             <constraint firstItem="57A-z4-SD9" firstAttribute="leading" secondItem="qJY-Q6-IWr" secondAttribute="leading" id="zdr-7q-bUP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lq6-UP-Sow"/>
                     <connections>
                         <outlet property="loginButton" destination="57A-z4-SD9" id="9SV-3m-zhA"/>
+                        <outlet property="logoImage" destination="qM4-hj-OkP" id="8Sa-qz-jA6"/>
                         <outlet property="passwordTextField" destination="DYD-BQ-gwt" id="jxh-md-IiH"/>
                         <outlet property="userTextField" destination="nYJ-ht-yFd" id="CTv-Hm-0Up"/>
                         <segue destination="3Lo-2t-a0X" kind="show" identifier="toMain" id="MVj-hd-n2Z"/>
@@ -366,6 +387,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="haS-KV-kW6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="foreground"/>
+                        <color key="tintColor" name="detail"/>
+                        <color key="barTintColor" name="foreground"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="detail"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="detail"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="L2x-oa-p80" kind="relationship" relationship="rootViewController" id="0iE-gM-prm"/>
@@ -381,17 +411,20 @@
                 <tabBarController id="3Lo-2t-a0X" customClass="TabBarController" customModule="On_The_Map" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="jVb-aJ-Q3l">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="x.circle.fill" catalog="system" id="jSs-m5-6iK">
+                            <color key="tintColor" name="detail"/>
                             <connections>
                                 <action selector="logout:" destination="3Lo-2t-a0X" id="2VU-j2-iPd"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="icon_refresh" id="U2P-3H-6qX">
+                                <color key="tintColor" name="detail"/>
                                 <connections>
                                     <action selector="refreshButtonPressed:" destination="3Lo-2t-a0X" id="HPZ-LL-PKn"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="icon_pin" id="D25-0w-0u4">
+                                <color key="tintColor" name="detail"/>
                                 <connections>
                                     <action selector="mapButtonPressed:" destination="3Lo-2t-a0X" id="Q2w-Gi-p1S"/>
                                 </connections>
@@ -401,7 +434,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1gy-dQ-F7B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="background"/>
+                        <color key="tintColor" name="selection"/>
+                        <color key="barTintColor" name="foreground"/>
+                        <color key="selectedImageTintColor" name="detail"/>
                     </tabBar>
                     <connections>
                         <outlet property="mapButton" destination="D25-0w-0u4" id="LU3-nN-ux7"/>
@@ -423,15 +459,22 @@
         <image name="icon_mapview-selected" width="75" height="50"/>
         <image name="icon_pin" width="24" height="24"/>
         <image name="icon_refresh" width="24" height="24"/>
+        <image name="logo-u" width="62" height="62"/>
         <image name="x.circle.fill" catalog="system" width="128" height="121"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.95294117647058818" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="detail">
+            <color red="0.11764705882352941" green="0.12941176470588237" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="foreground">
+            <color red="0.91764705882352937" green="0.74901960784313726" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="selection">
+            <color red="0.71372549019607845" green="0.53725490196078429" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

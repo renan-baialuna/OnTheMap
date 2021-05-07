@@ -12,9 +12,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var logoImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logoImage.image = UIImage(named: "logo-u")!.withRenderingMode(.alwaysTemplate)
+        logoImage.tintColor = UIColor(named: "detail")
     }
     
     override func viewWillAppear(_ animated: Bool) {
