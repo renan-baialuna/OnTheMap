@@ -30,6 +30,7 @@
 		8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8A261A80AB006D7C25 /* StudentLocation.swift */; };
 		8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8077ED8F261A8440006D7C25 /* StudentsResults.swift */; };
 		80B1B7D3263F21D600670DE1 /* UpdateDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B7D2263F21D600670DE1 /* UpdateDate.swift */; };
+		80B1B7E32643811B00670DE1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B1B7E22643811B00670DE1 /* UIViewController+Extension.swift */; };
 		80B66F432623D8FE009BA69E /* MapConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F422623D8FE009BA69E /* MapConfirmationViewController.swift */; };
 		80B66F482627CC25009BA69E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F472627CC25009BA69E /* LoginViewController.swift */; };
 		80B66F4D2627D36D009BA69E /* UserLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B66F4C2627D36D009BA69E /* UserLoginData.swift */; };
@@ -83,6 +84,7 @@
 		8077ED8A261A80AB006D7C25 /* StudentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		8077ED8F261A8440006D7C25 /* StudentsResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsResults.swift; sourceTree = "<group>"; };
 		80B1B7D2263F21D600670DE1 /* UpdateDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDate.swift; sourceTree = "<group>"; };
+		80B1B7E22643811B00670DE1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		80B66F422623D8FE009BA69E /* MapConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfirmationViewController.swift; sourceTree = "<group>"; };
 		80B66F472627CC25009BA69E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		80B66F4C2627D36D009BA69E /* UserLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginData.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				80003AD1261CC69C00C30196 /* InsertLocationViewController.swift */,
 				80B66F422623D8FE009BA69E /* MapConfirmationViewController.swift */,
 				80B66F472627CC25009BA69E /* LoginViewController.swift */,
+				80B1B7E22643811B00670DE1 /* UIViewController+Extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				8077ED8B261A80AB006D7C25 /* StudentLocation.swift in Sources */,
 				80B66F552627D454009BA69E /* UserLoginInfo.swift in Sources */,
 				802B117D261921F800742CFC /* MapViewController.swift in Sources */,
+				80B1B7E32643811B00670DE1 /* UIViewController+Extension.swift in Sources */,
 				802A21A0263795670081241A /* UserInformationComplete.swift in Sources */,
 				8077ED90261A8440006D7C25 /* StudentsResults.swift in Sources */,
 				8068CC5F261BACE00008D21D /* TabBarController.swift in Sources */,

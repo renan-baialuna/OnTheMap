@@ -19,7 +19,6 @@ class TabBarController: UITabBarController {
     var reloadDelegate: reloadDelegate?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,7 +42,22 @@ class TabBarController: UITabBarController {
     }
     
     @IBAction func mapButtonPressed(_ sender: Any) {
-        print("user has location: \(OTMClient.Auth.hasLocation)")
+        if OTMClient.Auth.hasLocation {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Warning!", message: "You have a location registered, overwrite?", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
+                    self.moveToNext()
+                }))
+                alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        } else {
+            moveToNext()
+        }
+        
+    }
+    
+    func moveToNext() {
         performSegue(withIdentifier: "segue", sender: self)
     }
     

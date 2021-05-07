@@ -50,7 +50,7 @@ class MapConfirmationViewController: UIViewController {
         OTMClient.taskForPUTRequest(url: url, responseType: UpdateDate.self, body: body) { (response, error) in
             if error == nil {
             } else {
-                self.showLoginFailure(title: "Error", message: "Unable to complete action")
+                self.showAlert(title: "Error", message: "Unable to complete action")
             }
         }
     }
@@ -60,7 +60,7 @@ class MapConfirmationViewController: UIViewController {
         OTMClient.taskForPOSTRequest(url: OTMClient.Endpoints.postLocation.url, responseType: SucessCreationReturn.self, body: body) { (response, error) in
             if error == nil {
             } else {
-                self.showLoginFailure(title: "Error", message: "Unable to complete action")
+                self.showAlert(title: "Error", message: "Unable to complete action")
             }
         }
     }

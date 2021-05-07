@@ -36,22 +36,12 @@ class LoginViewController: UIViewController {
                     self.performSegue(withIdentifier: "toMain", sender: self)
                 } else {
                     if let err = error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
-                        self.showLoginFailure(title: "Error", message: "Connection Problems")
+                        self.showAlert(title: "Error", message: "Connection Problems")
                     } else {
-                        self.showLoginFailure(title: "Error", message: "Credententials not accepted")
+                        self.showAlert(title: "Error", message: "Credententials not accepted")
                     }
                 }
             }
-        }
-    }
-}
-
-extension UIViewController {
-    func showLoginFailure(title: String, message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
         }
     }
 }
