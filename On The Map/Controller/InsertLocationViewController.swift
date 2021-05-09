@@ -16,6 +16,11 @@ class InsertLocationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        linkTextField.delegate = self
+        linkTextField.tag = 0
+        locationTextField.delegate = self
+        locationTextField.tag = 1
     }
     
     func getCoordinate( addressString : String, completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void ) {
@@ -56,5 +61,17 @@ class InsertLocationViewController: UIViewController {
             print("Não encontrado")
         }
     }
-    
+}
+
+extension InsertLocationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            textField.resignFirstResponder()
+            setLocation()
+        } else {
+            textField.resignFirstResponder()
+            locationTextField.becomeFirstResponder()
+        }
+        return false
+    }
 }

@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         logoImage.image = UIImage(named: "logo-u")!.withRenderingMode(.alwaysTemplate)
         logoImage.tintColor = UIColor(named: "detail")
+        userTextField.delegate = self
+        userTextField.tag = 0
+        passwordTextField.delegate = self
+        passwordTextField.tag = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,5 +50,18 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            textField.resignFirstResponder()
+            login()
+        } else {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        }
+        return false
     }
 }
