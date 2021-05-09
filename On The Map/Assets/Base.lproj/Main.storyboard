@@ -315,7 +315,7 @@
                                         <color key="backgroundColor" name="foreground"/>
                                         <color key="textColor" name="detail"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <constraints>

@@ -32,7 +32,7 @@ class OTMClient {
         var stringValue: String {
             switch self {
             case .getStudentsLocation:
-                return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt"
+                return "https://onthemap-api.udacity.com/v1/StudentLocation?order=-updatedAt&limit=100"
             case .postSession:
                 return "https://onthemap-api.udacity.com/v1/session"
             case .getUserLocation(let id):
@@ -44,6 +44,9 @@ class OTMClient {
             case .putLocation(let id):
                 return "https://onthemap-api.udacity.com/v1/StudentLocation/\(id)"
             }
+        }
+        var baseValue: String {
+            return "https://onthemap-api.udacity.com/v1/"
         }
         
         var url: URL {
