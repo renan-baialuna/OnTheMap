@@ -77,8 +77,12 @@ class InsertLocationViewController: UIViewController {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if let active = self.activeTextField {
-            if active.tag == 1 {
+            let bottomOfTextField = active.convert(active.bounds, to: self.view).maxY
+            let topOfKeyboard = self.view.frame.height - getKeyboardHeight(notification)
+            if bottomOfTextField > topOfKeyboard {
                 view.frame.origin.y = -getKeyboardHeight(notification)
+            } else {
+                view.frame.origin.y = 0
             }
         }
     }
