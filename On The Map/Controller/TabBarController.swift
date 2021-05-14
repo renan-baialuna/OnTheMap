@@ -31,7 +31,13 @@ class TabBarController: UITabBarController {
                 self.appDelegate.students = students
                 self.reloadDelegate?.reloadData()
             } else {
-                
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Error", message: "There was a problem with getting data, returning to login", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (action) in
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }
